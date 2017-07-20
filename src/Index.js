@@ -1,7 +1,7 @@
 
 import MyComponent from './MyComponent';
 
-var comp = new MyComponent('hideBtn', 'container');
+var comp = new MyComponent();
 
 
 

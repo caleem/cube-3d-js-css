@@ -1,19 +1,39 @@
 import $ from 'jquery';
 
 export default class {
-  constructor(btnRefId, containerRefId) {
-    this.btnRefId = btnRefId;
-    this.containerRefId = containerRefId;
+  constructor() {
+ 
     this.initEvent();
   }
 
   initEvent() { 
-    $('#'+ this.btnRefId).on('click', () => {
-      this.hideContainer();
+    $('.front').on('click', () => {
+        $('.cube').addClass('cube2');
     });
-  }
+    $('.right').on('click', () => {
+        $('.cube').addClass('cube2');
+    });
+    $('.back').on('click', () => {
+        $('.cube').addClass('cube2');
+    });
+    $('.left').on('click', () => {
+        $('.cube').addClass('cube2');
+    });
 
-  hideContainer() {
-    $('#'+this.containerRefId).hide();
-  }  
+    $('.cube').on("webkitAnimationEnd oanimationend msAnimationEnd animationend",
+      function() {
+        
+         $('.cube').removeClass('cube2');
+        var frontElement = $('.front') 
+        var rightElement = $('.right')
+        var backElement = $('.back')
+        var leftElement = $('.left')
+      
+       frontElement.removeClass('front').addClass('right');
+        rightElement.removeClass('right').addClass('back');
+        backElement.removeClass('back').addClass('left');
+        leftElement.removeClass('left').addClass('front');
+      }
+    ); 
+  }
 };
