@@ -22,7 +22,7 @@
 }
 
 .cube2 {
-	animation: spin 2s 1 linear;
+	animation: spin 0.5s 1 linear;
 }
 
 .cube div {
@@ -30,7 +30,7 @@
 	width:200px;
 	height:200px;
 	display:block;
-	background:rgba(255,255,255,0.8);
+	background:rgba(255,255,255,0.7);
 	box-shadow:inset 0 0 30px rgba(0,0,0,0.2);
 	font-size:20px;
 	text-align:center;
@@ -73,20 +73,64 @@
   to   { transform: rotateY(90deg); }
 }
 
-</style>
+.triangle {
+	width: 200px;
+	height: 200px;
+}
 
+.triangle div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+    box-sizing: border-box;
+}
+
+.ttop {
+	border-top: 100px solid red;
+	border-bottom: 100px solid green;
+	border-right: 100px solid blue;
+	border-left: 100px solid grey;
+}
+
+.tleft {
+	border-bottom: none;
+	border-right: none;
+	border-top: none;
+}
+.tright {
+	border-right: 10px solid blue;
+	border-left: none;
+	border-bottom: none;
+	border-top: none;
+}
+.tbottom {
+	border-bottom: 100px solid grey;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+</style>
 
 </head>
 <body>
 	<div class="wrap">
 		<div class="cube">
-			<div class="front">front</div>
-			<div class="back">back</div>
+			<div class="front">A</div>
+			<div class="back">C</div>
 			<div class="top">top</div>
 			<div class="bottom">bottom</div>
-			<div class="left">left</div>
-			<div class="right">right</div>
+			<div class="left">B</div>
+			<div class="right">D</div>
 		</div>
 	</div>
+
+	<div id="triangleContainer" class="triangle">
+		<div class="ttop" ></div>
+		<!--<div class="tleft"></div>
+		<div class="tright"></div>
+		<div class="tbottom"></div>-->
+	</div>
+
 </body>
 </html>
